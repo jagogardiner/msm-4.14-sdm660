@@ -91,5 +91,6 @@ const struct mpm_pin mpm_sdm660_gpio_chip_data[] = {
 	{83, 109},
 	{84, 103},
 	{85, 105},
+	{0xff, 59},
 	{-1},
 };
