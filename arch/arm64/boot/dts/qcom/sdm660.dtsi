@@ -603,6 +603,7 @@
 		reg = <0x10ac000 0x4>,
 		      <0x1fd3000 0x4>;
 		reg-names = "pshold-base", "tcsr-boot-misc-detect";
+		qcom,force-warm-reboot;
 	};
 
 	spmi_bus: qcom,spmi@800f000 {
