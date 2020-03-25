@@ -227,11 +227,6 @@
 	};
 };
 
-&pm660_coincell {
-	qcom,vset-millivolts = <3200>;
-	qcom,charge-enable = <1>;
-};
-
 &pm660_haptics {
        status = "okay";
        qcom,wave-play-rate-us = <4878>;
@@ -445,13 +440,4 @@
 
 &qcom_qbt1000 {
 	status = "disabled";
-};
-
-
-/* white led was used for powersupply of White led */
-&red_led {
-	linux,name = "white";
-	qcom,duty-pcts =
-		[00 04 08 0C 0F 12 14 15 16
-		16 15 14 12 0F 0C 08 04 00];
 };

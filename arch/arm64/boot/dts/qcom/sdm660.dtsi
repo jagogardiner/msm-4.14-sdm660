@@ -398,12 +398,20 @@
 
 			fstab {
 				compatible = "android,fstab";
-				vendor {
-					compatible = "android,vendor";
-		dev = "/dev/block/platform/soc/c0c4000.sdhci/by-name/vendor";
+					system {
+					compatible = "android,system";
+					dev = "/dev/block/platform/soc/c0c4000.sdhci/by-name/system";
 					type = "ext4";
 					mnt_flags = "ro,barrier=1,discard";
-					fsmgr_flags = "wait,slotselect,avb";
+					fsmgr_flags = "wait,verify";
+					status = "ok";
+				};
+				vendor {
+					compatible = "android,vendor";
+					dev = "/dev/block/platform/soc/c0c4000.sdhci/by-name/vendor";
+					type = "ext4";
+					mnt_flags = "ro,barrier=1,discard";
+					fsmgr_flags = "wait,verify";
 					status = "ok";
 				};
 			};
@@ -810,7 +818,7 @@
 		clock-names = "core", "iface";
 	};
 
-	qcom,qbt1000 {
+	qcom_qbt1000: qcom,qbt1000 {
 		compatible = "qcom,qbt1000";
 		clock-names = "core", "iface";
 		clocks = <&clock_gcc GCC_BLSP1_QUP3_SPI_APPS_CLK>,
