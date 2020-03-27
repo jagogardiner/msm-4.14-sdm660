@@ -8,6 +8,8 @@
 fwdir := $(subst $(quote),,$(CONFIG_EXTRA_FIRMWARE_DIR))
 fwabs := $(addprefix $(srctree)/,$(filter-out /%,$(fwdir)))$(filter /%,$(fwdir))
 
+fw-shipped-$(CONFIG_TOUCHSCREEN_NT36xxx) += novatek_nt36672_d2t.fw
+
 fw-external-y := $(subst $(quote),,$(CONFIG_EXTRA_FIRMWARE))
 
 quiet_cmd_fwbin = MK_FW   $@
